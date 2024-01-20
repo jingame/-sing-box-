@@ -156,5 +156,13 @@ domain是指`匹配完整域名`。
 
 ---
 
-domain_suffix是指'匹配域名后缀'。
+domain_suffix  是指'匹配域名后缀'。
+
+---
+
+domain_keywords是指`匹配域名关键字`。  
+
+---
+
+domain_regex是指`匹配域名正则表达式`。
 
