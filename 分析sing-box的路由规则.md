@@ -1,110 +1,111 @@
 ## 结构()
 ```
 {
-  "route": {
-    "rules": [
+    "route": {
+        "rules": [
+        {
+            "inbound": [                                    //入站标签
+                "mixed-in"
+            ] ,
+                "ip_version" : 6,                           //得看你的ip是ipv4还是ipv6
+                "network" : [                               //计算机系统、设备或资源之间相互连接的集合
+                    "tcp"                                   //传输控制协议
+                ] ,
+                "auth_user" : [                             //认证用户名
+                    "usera",
+                        "userb"
+                ] ,
+                "protocol" : [                                  //探测到的协议
+                    "tls",
+                        "http",
+                        "quic"
+                ] ,
+                "domain" : [                                            //匹配完整域名
+                    "test.com"
+                ] ,
+                "domain_suffix" : [                                 //匹配域名后缀
+                    ".cn"
+                ] ,
+                "domain_keyword" : [                                //匹配域名关键字
+                    "test"
+                ] ,
+                "domain_regex" : [                                  //匹配域名正则表达式
+                    "^stun\\..+"
+                ] ,
+                "geosite" : [                                       //匹配Geosite
+                    "cn"
+                ] ,
+                "source_geoip" : [                              //匹配源geoip
+                    "private"
+                ] ,
+                "geoip" : [                                     //匹配Geoip
+                    "cn"
+                ] ,
+                "source_ip_cidr" : [                            //匹配源IP CIDR
+                    "10.0.0.0/24"
+                ] ,
+                "source_ip_is_private" : false,                 //匹配非公开源IP
+                "ip_cidr" : [
+                    "10.0.0.0/24"
+                ] ,
+                "ip_is_private" : false,                        //匹配非公开IP
+                "source_port" : [                               //匹配源端口
+                    12345
+                ] ,
+                "source_port_range" : [                         //匹配源端口范围
+                    "1000:2000",
+                        ":3000",
+                        "4000:"
+                ] ,
+                "port" : [
+                    80,
+                        443
+                ] ,
+                "port_range" : [                        //匹配端口
+                    "1000:2000",
+                        ":3000",
+                        "4000:"
+                ] ,
+                "process_name" : [                              //匹配进程名称
+                    "curl"                                      //用于发送和接收数据
+                ] ,
+                "process_path" : [                              //匹配进程路径
+                    "/usr/bin/curl"
+                ] ,
+                "package_name" : [                               //匹配Android应用包名
+                    "com.termux"
+                ] ,
+                "user" : [                                      //匹配用户名
+                    "sekai"
+                ] ,
+                "user_id" : [                               //匹配用户ID
+                    1000
+                ] ,
+                "clash_mode" : "direct",                        //clash模式
+                "wifi_ssid" : [                                 //用于表示特定 Wi-Fi 网络名称的变量或参数
+                    "My WIFI"
+                ] ,
+                "wifi_bssid" : [                                //表示特定 Wi-Fi "接入"点的标识符的变量或参数
+                    "00:00:00:00:00:00"
+                ] ,
+                "rule_set" : [                                  //规则集
+                    "geoip-cn",                                 //GeoIP 数据库中针对中国地区的 IP 地址定位信息
+                        "geosite-cn"                            //用于网络代理、防火墙或类似网络安全设备中
+                ] ,
+                "invert" : false,                               //反选匹配结果
+                "outbound" : "direct"                          //目标出站的标签
+        },
       {
-        "inbound": [                                
-          "mixed-in"
-        ],
-        "ip_version": 6,
-        "network": [
-          "tcp"
-        ],
-        "auth_user": [
-          "usera",
-          "userb"
-        ],
-        "protocol": [
-          "tls",
-          "http",
-          "quic"
-        ],
-        "domain": [
-          "test.com"
-        ],
-        "domain_suffix": [
-          ".cn"
-        ],
-        "domain_keyword": [
-          "test"
-        ],
-        "domain_regex": [
-          "^stun\\..+"
-        ],
-        "geosite": [
-          "cn"
-        ],
-        "source_geoip": [
-          "private"
-        ],
-        "geoip": [
-          "cn"
-        ],
-        "source_ip_cidr": [
-          "10.0.0.0/24"
-        ],
-        "source_ip_is_private": false,
-        "ip_cidr": [
-          "10.0.0.0/24"
-        ],
-        "ip_is_private": false,
-        "source_port": [
-          12345
-        ],
-        "source_port_range": [
-          "1000:2000",
-          ":3000",
-          "4000:"
-        ],
-        "port": [
-          80,
-          443
-        ],
-        "port_range": [
-          "1000:2000",
-          ":3000",
-          "4000:"
-        ],
-        "process_name": [
-          "curl"
-        ],
-        "process_path": [
-          "/usr/bin/curl"
-        ],
-        "package_name": [
-          "com.termux"
-        ],
-        "user": [
-          "sekai"
-        ],
-        "user_id": [
-          1000
-        ],
-        "clash_mode": "direct",
-        "wifi_ssid": [
-          "My WIFI"
-        ],
-        "wifi_bssid": [
-          "00:00:00:00:00:00"
-        ],
-        "rule_set": [
-          "geoip-cn",
-          "geosite-cn"
-        ],
-        "invert": false,
-        "outbound": "direct"
-      },
-      {
-        "type": "logical",
-        "mode": "and",
-        "rules": [],
-        "invert": false,
-        "outbound": "direct"
+        "type": "logical",                                              //"类型"："逻辑"
+        "mode" : "and",                                                    //意思是选“and逻辑符”，两个逻辑表达式必须是真
+        "rules" : [] ,                                                      //包括的规则
+        "invert" : false,                                                   //反选匹配结果
+        "outbound" : "direct"                                               //“目标出站”：“直连”
       }
-    ]
-  }
+        ]
+    }
 }
+
 ```
 
 ---
