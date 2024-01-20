@@ -1,3 +1,4 @@
+## 结构()
 ```
 {
   "route": {
@@ -104,5 +105,49 @@
     ]
   }
 }
+```
+
+---
+<br>
+
+## 默认字段(Default Fields)
 
 ```
+(domain || domain_suffix || domain_keyword || domain_regex || geosite || geoip || ip_cidr || ip_is_private) &&
+
+(port || port_range) &&
+
+(source_geoip || source_ip_cidr || source_ip_is_private) &&
+
+(source_port || source_port_range) &&
+
+other fields
+
+另外，引用的规则集可视为被合并，而不是作为一个单独的规则子项。
+```
+
+---
+
+<br>
+
+inbound 是指 `入站标签`。  
+
+---
+
+ip_version 是指`ipv4或ipv6两种`。  
+
+---
+
+auth_user  是指`认证用户名`，参阅入站设置  
+
+---
+
+protocol  是指`探测到的协议`，参阅协议探测
+
+---
+
+network 是指`是计算机系统、设备或资源之间相互连接的集合`。  
+>tcp是指`传输控制协议`。
+
+
+
