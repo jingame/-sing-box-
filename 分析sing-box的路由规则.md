@@ -4,7 +4,7 @@
   "route": {
     "rules": [
       {
-        "inbound": [
+        "inbound": [                                
           "mixed-in"
         ],
         "ip_version": 6,
@@ -166,3 +166,5 @@ domain_keywords是指`匹配域名关键字`。
 
 domain_regex是指`匹配域名正则表达式`。
 
+---
+geosite 是指``
